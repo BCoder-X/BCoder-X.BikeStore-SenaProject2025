@@ -1,0 +1,227 @@
+/* ===============================================================
+   HEADER PRINCIPAL
+   =============================================================== */
+.component-header {
+  background: var(--color-dark);
+  background-image:
+    linear-gradient(45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+    linear-gradient(-45deg, rgba(255,255,255,0.06) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.06) 75%),
+    linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.06) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  box-shadow: var(--shadow);
+  padding: 10px 16px;
+  width: 100%;
+  color: var(--color-secondary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Contenedor interior */
+.component-top-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* ===============================================================
+   LOGO
+   =============================================================== */
+.component-logo a {
+  font-family: var(--font-main);
+  text-decoration: none;
+  font-weight: 800;
+  display: inline-block;
+  color: var(--color-primary);
+  font-size: clamp(1.4rem, 4vw, 2.4rem);
+  line-height: 1;
+  transition: transform var(--transition-fast), text-shadow var(--transition-fast);
+}
+.component-logo a:hover,
+.component-logo a:focus {
+  transform: scale(1.06);
+  text-shadow: 0 0 10px rgba(229,9,20,0.4);
+}
+.component-logo span {
+  color: var(--color-secondary);
+}
+
+/* ===============================================================
+   BARRA DE BÚSQUEDA
+   =============================================================== */
+.component-search-bar {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 540px;
+  margin: 0 12px;
+}
+
+.component-search-bar form {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.component-search-bar input[type="search"] {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: var(--radius) 0 0 var(--radius);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  color: var(--color-secondary);
+  font-size: .95rem;
+  transition: box-shadow .18s ease, border-color .18s ease;
+}
+.component-search-bar input::placeholder {
+  color: rgba(255,255,255,0.5);
+}
+.component-search-bar input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(229,9,20,0.12);
+}
+
+.component-search-bar button {
+  padding: 10px 14px;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  border: none;
+  background: linear-gradient(180deg, var(--color-primary), #b0060f);
+  color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .12s ease, filter .12s ease;
+}
+.component-search-bar button:active {
+  transform: scale(.98);
+  filter: brightness(.98);
+}
+
+/* ===============================================================
+   ACCIONES DEL HEADER
+   =============================================================== */
+.component-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* Login */
+.component-login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 10px;
+  font-size: .95rem;
+  color: var(--color-secondary);
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background .15s ease, color .15s ease;
+}
+.component-login-btn:hover {
+  background: rgba(255,255,255,0.02);
+  color: var(--color-primary);
+}
+
+/* Carrito */
+.component-cart-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  font-size: 1.25rem;
+  color: var(--color-secondary);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform .12s ease, background .12s ease, color .12s ease;
+}
+.component-cart-btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.02);
+  color: var(--color-primary);
+}
+
+/* Contador del carrito */
+.component-cart-count {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 6px;
+  border-radius: 999px;
+  color: var(--color-secondary);
+  background: var(--color-primary);
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: transform .28s ease;
+}
+.component-cart-count.bump {
+  animation: component-bump .32s ease;
+}
+
+@keyframes component-bump {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+  100% { transform: scale(1); }
+}
+
+/* Accesibilidad */
+.component-sr-only {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===============================================================
+   RESPONSIVE
+   =============================================================== */
+@media (max-width: 720px) {
+  .component-top-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .component-search-bar {
+    order: 2;
+    width: 100%;
+    max-width: none;
+  }
+
+  .component-header-actions {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .component-logo {
+    order: 1;
+  }
+
+  .component-login-btn {
+    padding: 8px;
+  }
+}

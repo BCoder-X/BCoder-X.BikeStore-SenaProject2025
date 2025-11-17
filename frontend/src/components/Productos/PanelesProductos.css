@@ -1,0 +1,147 @@
+/* ===========================================================
+   🎨 SECCIÓN PRINCIPAL
+   =========================================================== */
+#bikeStore-main .bs-featured-products {
+  background: var(--color-light);
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+#bikeStore-main .bs-featured-products h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 2rem;
+}
+
+
+/* ===========================================================
+   🧩 GRID DE PRODUCTOS
+   =========================================================== */
+.bs-product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.8rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  place-items: center;        /* Centra los items vertical y horizontal */
+  justify-content: center;    /* Evita deformación cuando hay 1 producto */
+}
+
+
+/* ===========================================================
+   🛒 TARJETA DE PRODUCTO
+   =========================================================== */
+.bs-product-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;           /* Limita el ancho para evitar deformación */
+  width: 100%;                /* Mantiene adaptabilidad */
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.bs-product-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+
+
+/* ===========================================================
+   🖼️ IMAGEN DEL PRODUCTO
+   =========================================================== */
+.bs-product-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #f5f5f5;
+}
+
+
+/* ===========================================================
+   📦 INFORMACIÓN DEL PRODUCTO
+   =========================================================== */
+.bs-product-info {
+  padding: 1rem 1.2rem;
+  flex: 1;
+}
+
+.bs-product-info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.bs-price {
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 0.8rem;
+}
+
+
+/* ===========================================================
+   🆕 BOTONES DE ACCIÓN
+   =========================================================== */
+.bs-product-actions {
+  padding: 0.9rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.bs-btn-add-cart {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.65rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bs-btn-add-cart:hover {
+  background: #c50712;
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.25);
+}
+
+
+/* ===========================================================
+   🔽 FILTROS
+   =========================================================== */
+.bs-filters {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.bs-filter-select {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: #fff;
+}
+
+
+/* ===========================================================
+   📱 RESPONSIVE
+   =========================================================== */
+@media (max-width: 768px) {
+  .bs-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .bs-product-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,142 @@
+/* ===============================================================
+   ESTILOS PARA NAVEGACIÓN PRINCIPAL - COMPONENTE NavBar
+   Prefijo: #component-bottomNav / .component-bottomNav-*
+   =============================================================== */
+
+#component-bottomNav {
+  background-color: var(--color-dark);
+  width: 100%;
+  z-index: 1000;
+  position: relative;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+/* ===============================================================
+    Lista general
+   =============================================================== */
+.component-bottomNav-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+
+  transition: max-height 0.3s ease;
+}
+
+.component-bottomNav-list li {
+  display: inline-block;
+}
+
+/* ===============================================================
+    Enlaces
+   =============================================================== */
+.component-bottomNav-list a {
+  color: var(--color-secondary);
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 500;
+
+  padding: 14px 0;
+
+  display: inline-block;
+  position: relative;
+
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.component-bottomNav-list a:hover {
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+/* Activo */
+.component-bottomNav-list a.active {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.component-bottomNav-list a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 3px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  animation: underline 0.25s ease forwards;
+}
+
+@keyframes underline {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ===============================================================
+    Botón hamburguesa
+   =============================================================== */
+.component-bottomNav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-light);
+  font-size: 1.9rem;
+  cursor: pointer;
+
+  padding: 14px 22px;
+  margin-left: auto;
+  margin-right: auto;
+
+  transition: color 0.25s ease;
+}
+
+.component-bottomNav-toggle:hover {
+  color: var(--color-primary);
+}
+
+/* ===============================================================
+    Vista móvil
+   =============================================================== */
+@media (max-width: 800px) {
+  .component-bottomNav-list {
+    flex-direction: column;
+    padding-bottom: 15px;
+
+    background-color: var(--color-gray-dark);
+    width: 100%;
+    text-align: center;
+
+    box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+
+    display: none;
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+
+  .component-bottomNav-list.show {
+    display: flex;
+    animation: menuDrop 0.35s ease forwards;
+  }
+
+  .component-bottomNav-toggle {
+    display: block;
+  }
+}
+
+/* Animación */
+@keyframes menuDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

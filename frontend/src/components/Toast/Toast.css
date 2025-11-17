@@ -1,0 +1,78 @@
+/* ===========================================================
+    Toast Notification 
+   =========================================================== */
+.toast-notification {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  background: var(--color-secondary);
+  color: var(--color-light);
+
+  padding: 12px 18px;
+  border-left: 4px solid var(--color-success);
+  border-radius: 12px;
+
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+
+  opacity: 0;
+  transform: translateY(20px) scale(0.96);
+
+  animation: toastFade 3s ease forwards;
+
+  cursor: pointer;
+  user-select: none;
+
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+}
+
+/* Ícono */
+.toast-icon {
+  font-size: 1.2rem;
+  color: var(--color-success);
+  animation: iconPop 0.35s ease-out forwards;
+}
+
+/* Mensaje */
+.toast-message {
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1.2;
+}
+
+/* ✨ Animación más suave y elegante */
+@keyframes toastFade {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  12% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(15px) scale(0.98);
+  }
+}
+
+/* Pequeño POP del check */
+@keyframes iconPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

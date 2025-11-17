@@ -1,0 +1,118 @@
+/* ============================================================
+   RESET GLOBAL DE ESTILOS – Bike Store
+   ============================================================ */
+
+/* Elimina márgenes, rellenos y bordes por defecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Ajustes base para HTML y BODY */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  color: #111;
+  background-color: #fff;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Quita subrayado y color por defecto de los enlaces */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Listas sin viñetas */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Imágenes fluidas y sin bordes */
+img,
+picture,
+svg,
+video,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border: none;
+}
+
+/* Formularios limpios */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  outline: none;
+}
+
+/* Botones clicables */
+button {
+  cursor: pointer;
+}
+
+/* Tablas limpias */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Elimina márgenes extras en encabezados y párrafos */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Scrollbar más limpio */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #aaa;
+}
+
+/* ======================================================
+   🎨 VARIABLES GLOBALES - PALETA Y BASE DE DISEÑO
+   ====================================================== */
+:root {
+  --color-primary: #E50914;       /* Rojo moderno y energético - botones, acentos */
+  --color-secondary: #FFFFFF;     /* Blanco puro - textos principales */
+  --color-dark: #0E0E0E;          /* Negro profundo - fondo principal */
+  --color-gray-dark: #1C1C1C;     /* Gris carbón - secciones internas */
+  --color-gray-light: #D9D9D9;    /* Gris claro - bordes y detalles */
+  --color-success: #27AE60;       /* Verde éxito - mensajes o descuentos */
+  --color-error: #FF3B30;         /* Rojo alerta - errores o eliminar */
+  --transition-fast: 0.3s ease;   /* Transición base para animaciones */
+  --radius: 12px;                 /* Radio de bordes coherente */
+  --shadow: -4px 0 25px rgba(0, 0, 0, 0.7);
+  --font-main: 'Segoe UI', sans-serif;
+   --transition-fast: 0.3s ease;
+  --transition-medium: 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-soft: 0 6px 20px rgba(0, 0, 0, 0.25);
+  --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+

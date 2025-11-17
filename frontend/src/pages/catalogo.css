@@ -1,0 +1,71 @@
+/* ============================================================
+   🏔️ HEADER — SECCIÓN PRINCIPAL (MODERNA Y LIMPIA)
+   ============================================================ */
+.bs-header-section {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  background: #fff;
+}
+
+.bs-header-section h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #111;
+}
+
+.bs-header-section p {
+  font-size: 1rem;
+  color: #555;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ============================================================
+   📱 RESPONSIVE HEADER
+   ============================================================ */
+@media (max-width: 1024px) {
+  .bs-header-section {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .bs-header-content {
+    max-width: 100%;
+    margin-top: 1.5rem;
+  }
+
+  .bs-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .bs-header-content p {
+    font-size: 1rem;
+  }
+
+  .bs-header-image img {
+    width: 300px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bs-header-section {
+    padding: 2rem 1rem;
+  }
+
+  .bs-header-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .bs-header-content p {
+    font-size: 0.95rem;
+  }
+
+  .bs-header-image img {
+    width: 100%;
+    height: auto;
+  }
+}

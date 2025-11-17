@@ -1,0 +1,360 @@
+/* ======================================================
+    CHECKOUT MODAL
+   ====================================================== */
+.checkout-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.checkout-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 1;
+  backdrop-filter: blur(5px);
+}
+
+.checkout-content {
+  position: relative;
+  z-index: 2;
+  width: 430px;
+  max-width: 95%;
+  background: #181818;
+  color: #f1f1f1;
+  padding: 32px 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.7);
+  animation: slideIn 0.35s ease-out;
+}
+
+.checkout-content h3 {
+  text-align: center;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--color-primary, #ff2a2a);
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.checkout-content input,
+.checkout-content select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #101010;
+  color: #f1f1f1;
+  font-size: 15px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.checkout-content input:focus,
+.checkout-content select:focus {
+  border-color: var(--color-primary, #ff2a2a);
+  box-shadow: 0 0 0 2px rgba(255, 42, 42, 0.25);
+  outline: none;
+}
+
+/* ======================================================
+    MÉTODOS DE PAGO
+   ====================================================== */
+.payment-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.payment-option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: #131313;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+}
+
+.payment-option:hover {
+  background: #1a1a1a;
+  border-color: var(--color-primary, #ff2a2a);
+}
+
+.payment-option.active {
+  background: var(--color-primary, #ff2a2a);
+  border-color: transparent;
+  color: #fff;
+}
+
+/* ======================================================
+    FACTURA / RESUMEN
+   ====================================================== */
+.invoice {
+  background: #131313;
+  border-radius: 10px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.invoice-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+  font-size: 0.9rem;
+}
+
+.invoice-item.total {
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--color-primary, #ff2a2a);
+}
+
+/* ======================================================
+    BOTONES DEL ASISTENTE
+   ====================================================== */
+.wizard-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.wizard-buttons button {
+  flex: 1;
+}
+
+.payment-success {
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* ======================================================
+    ANIMACIONES
+   ====================================================== */
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ======================================================
+    BOTONES — INTERACCIÓN MODERNA Y COHERENTE
+   ====================================================== */
+.checkout-btn,
+.wizard-buttons button {
+  position: relative;
+  overflow: hidden;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #ff2020, #ff3b3b);
+  color: #fff;
+  letter-spacing: 0.3px;
+  transition: 
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.checkout-btn::before,
+.wizard-buttons button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 45%;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
+  opacity: 0.2;
+  transition: opacity 0.3s ease;
+}
+
+.checkout-btn:hover,
+.wizard-buttons button:hover:not(:disabled) {
+  background: linear-gradient(135deg, #ff3b3b, #ff5858);
+  transform: translateY(-2px);
+  box-shadow: 0 0 18px rgba(255, 42, 42, 0.45);
+}
+
+.checkout-btn:hover::before,
+.wizard-buttons button:hover::before {
+  opacity: 0.35;
+}
+
+.checkout-btn:active,
+.wizard-buttons button:active:not(:disabled) {
+  transform: scale(0.97);
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.25);
+  opacity: 0.9;
+}
+
+.checkout-btn:disabled,
+.wizard-buttons button:disabled {
+  background: linear-gradient(135deg, #262626, #1b1b1b);
+  color: #777;
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ===== Botón secundario ===== */
+.wizard-buttons .secondary {
+  background: linear-gradient(135deg, #1c1c1c, #151515);
+  border: 1px solid #333;
+  color: #ddd;
+  transition: all 0.25s ease;
+}
+
+.wizard-buttons .secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #222, #1b1b1b);
+  border-color: var(--color-primary, #ff2a2a);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 42, 42, 0.3);
+}
+
+/* ===== Pulso suave ===== */
+.checkout-btn.pulse {
+  animation: pulseGlow 2.8s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 42, 42, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 22px rgba(255, 42, 42, 0.55);
+  }
+}
+.checkout-step {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.checkout-step.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Forzar que las alertas de SweetAlert2 siempre estén por encima de todo */
+.swal2-container {
+  z-index: 99999 !important;
+}
+/* ======================================================
+    RESPONSIVE DESIGN — PANEL DEL CARRITO
+   ====================================================== */
+
+/* === Tablets (1024px) === */
+@media (max-width: 1024px) {
+  .cart-panel {
+    width: 380px;
+    right: -380px;
+  }
+
+  .checkout-content {
+    width: 380px;
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  }
+}
+
+/* === Móviles grandes (768px) === */
+@media (max-width: 768px) {
+  .cart-panel {
+    width: 330px;
+    right: -330px;
+  }
+
+  .cart-item img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .checkout-content {
+    width: 330px;
+    padding: 26px 22px;
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+}
+
+/* === Móviles medianos (480px) === */
+@media (max-width: 480px) {
+  .cart-panel {
+    width: 100%;
+    right: -100%;
+    max-width: none;
+  }
+
+  .cart-header h2 {
+    font-size: 1.1rem;
+  }
+
+  .cart-scroll-content {
+    padding: 1rem;
+  }
+
+  .cart-item {
+    padding: 0.8rem;
+    gap: 0.7rem;
+  }
+
+  .cart-item img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .checkout-content {
+    width: 92%;
+    padding: 22px 18px;
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .wizard-buttons {
+    flex-direction: column;
+  }
+}
+
+/* === Móviles muy pequeños (340px) === */
+@media (max-width: 340px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .quantity-control {
+    margin-top: 6px;
+  }
+
+  .checkout-content {
+    width: 95%;
+    padding: 18px 16px;
+  }
+
+  .payment-methods {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
