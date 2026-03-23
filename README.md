@@ -94,9 +94,6 @@ cd BCoder-X-bike-store-senaproject2025
 
 ---
 
-### 🔹 2.1. Descarga lo node_modules y ahorrate los siguientes pasos
-
-node_modules https://drive.google.com/drive/folders/16JuuAbOo2Kxeyk_LmnakTiIZKQtCe-v8?usp=drive_link
 
 ### 🔹 3. Instalar dependencias del frontend
 
